@@ -32,8 +32,7 @@ router.route('/questions')
 	questions[req.body.id] = req.body; // push object from client to array
 
 	res.json({recieved: true, id: req.body.id}); // return something
-})
-;
+});
 
 router.route('/answers')
 // GET /answers
@@ -61,20 +60,20 @@ router.route('/comments')
 router.route('/questions/:question_id')
 // GET /questions//:question_id
 .get(function(req, res) {
-	res.json(questions[req.params.question_id])
-})
+	res.json(questions[req.params.question_id]);
+});
 
 router.route('/answers/:answer_id')
 // GET /answers/:answer_id
 .get(function(req, res) {
-	res.json(answers[req.params.answer_id])
-})
+	res.json(answers[req.params.answer_id]);
+});
 
 router.route('/comment/:comment_id')
 // GET /comment:comment_id
 .get(function(req, res) {
-	res.json(comments[req.params.comment_id])
-})
+	res.json(comments[req.params.comment_id]);
+});
 
 
 // add /api to routes
