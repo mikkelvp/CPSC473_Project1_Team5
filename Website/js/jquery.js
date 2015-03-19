@@ -6,59 +6,63 @@ http://tutorialzine.com/2009/09/simple-ajax-website-jquery/
 
 */
 
+
 var main = function () {
 
-  $('#questionForm button').click(function() {
-    // create JSON string by pulling from HTML DOM objects
-    var jsonString = "";
+  // Switch pages
+  var $activeContainer = $('#homepage');
+  
+  $('.mainChanger').click(function(e) {
+    // Prevent normal function of link & fade the current active page
+    e.preventDefault();
+    $activeContainer.fadeOut('fast');
     
-    
-    
-    // parse JSON string to JSON object
-    
+    // Check class of clicked element for id of page to change to & set active page
+    if ($(this).hasClass('homepage')) {
+      $('#homepage').fadeIn('fast');
+      $activeContainer = $('#homepage');
+    }
+    else if ($(this).hasClass('questions')) {
+      $('#questions').fadeIn('fast');
+      $activeContainer = $('#questions');
+    }
+    else if ($(this).hasCLass('newQuestion')) {
+      $('#newQuestion').fadeIn('fast');
+      $activeContainer = $('#newQuestion');
+    }
+    else if ($(this).hasCLass('question')) {
+      $('#question').fadeIn('fast');
+      $activeContainer = $('#question');
+    }
+
   });
 
-  //checkPage();
-  
-  $("a").click(function(e) {
-  //$(".navbar-brand").click(function(e) {
-    console.log("click");
-    //checkPage(this.hash);
-    //$("main").load("test.html", function() {});
+
+  // On button press - submit question
+  $('#questionForm button').click(function() {
+    // create JSON string by pulling from HTML DOM objects
+    var jsonObject = {};
+    var question = $('').val();
+    var answers = {};
     
-    /*
-    $.ajax({
-      url: "test.html", dataType: "html"
-    }).done(function(responseHtml) {
-      $("#main").html(responseHtml);
+    if (question === "") {
+      alert("Please fill out all form entries");
+      return;
+    }
+    
+    // Loop through answers and insert them in answers array
+    $('#answerList li').each(function() {
+      answers.push($(this).text());
     });
-    */
+    
+    jsonObject.isActive = true;
+    jsonObject.question = question;
+    jsonObject.answers = answers;
+    jsonObject.expirationDate = Date.now().toString();
+    //jsonObject.images = ;
     
   });
 
 };
 
-var prevUrl = "";
-
 $(document).ready(main);
-
-function checkPage(hash) {
-// checks for hash url that will load content portion of page
-
-  if (!hash) {
-    hash = window.location.hash;
-  }
-  
-  if (hash != prevUrl) {
-    prevUrl = window.location.hash;
-    loadPage(hash);
-  }
-
-}
-
-function loadPage(hash) {
-// loads content on the page
-
-  //$("main").load("test.html", function() {});
-
-}
