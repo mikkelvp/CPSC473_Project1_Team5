@@ -1,0 +1,13 @@
+[
+	{
+		"id": 1,
+		"isActive": true,
+		"title": "What should i name my cat?",
+		"body":"This is my new cat. Vote on a name or suggest something",
+		"answers": [1, 2],
+		"expirationDate": "2015-12-15T08:13:56.470Z",
+		"images": [1, 2],
+		"comments": [1, 2]
+	}
+
+]

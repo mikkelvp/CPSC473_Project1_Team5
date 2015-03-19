@@ -1,0 +1,21 @@
+[
+	null,
+	{
+			"id": 1,
+			"upVotes": 99,
+			"downVotes": 2,
+			"answer": "Bob"
+		},
+		{
+			"id": 2,
+			"upVotes": 4,
+			"downVotes": 2,
+			"answer": "Carl"
+		},
+		{
+			"id": 3,
+			"upVotes": 6,
+			"downVotes": 1,
+			"answer": "Allan"
+		}		
+]
