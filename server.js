@@ -27,7 +27,7 @@ router.route('/questions')
 .get(function(req, res) {
 	res.json(questions);
 })
-// POST /questions
+// POST /questions 
 .post(function(req, res) {
 	console.log(req.body);
 	//I incremented the id by 1 to account for the fact that the very first id starts from 1, not 0
