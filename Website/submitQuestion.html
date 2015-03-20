@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default ">
+        <div class="container-fluid">
+          <div id="navbar">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="submitQuestion.html">New Question</a></li>
+              <li><a href="question.html">List of Questions</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container main-container">
+        <h1>Submit a question</h1>
+        <div class="input-box">
+          <div id="qTitle">Question Title<br />
+            <input size="65"></div>
+          <div id="qBody">Question Body<br />
+            <textarea cols="50" rows="5"></textarea>
+          </div>
+          <div id="expDate">Expiration date/time: <input id="datetimepicker" type="text"></div>
+          <div id="image">Image url(optional) <input size="65"></div>
+          <div id="submit"><!--<button class='btn-default'>submit question</button>-->
+            <a class="btn btn-default" role="button" href="#">Submit Question »</a>
+          </div>
+          <div id="questions"></div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <script src="js/submitQuestion.js"></script>
+  </body>
+</html>
