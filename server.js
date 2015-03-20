@@ -28,8 +28,8 @@ router.route('/questions')
 	var currDate = new Date();
 	//if expiration date passed, set question to not active
 	for(var i=1; i<questions.length; i++) {
-		console.log(currDate);
-		console.log(questions[i].expirationDate);
+		//console.log(currDate);
+		//console.log(questions[i].expirationDate);
 		if(questions[i].expirationDate < currDate)
 			questions[i].isActive = false;
 	}
