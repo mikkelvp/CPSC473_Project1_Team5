@@ -15,6 +15,8 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + "/Website"));
+
 http.createServer(app).listen(3000);
 console.log("Service started on port 3000");
 
@@ -27,10 +29,11 @@ router.route('/questions')
 })
 // POST /questions
 .post(function(req, res) {
-	//console.log(req.body);
-	req.body.id = questions.length; // set id to be the next element in the array
-	questions[req.body.id] = req.body; // push object from client to array
-
+	console.log(req.body);
+	//I incremented the id by 1 to account for the fact that the very first id starts from 1, not 0
+	req.body.id = questions.length+1; // set id to be the next element in the array
+	req.body.isActive = true;
+	questions[req.body.id-1] = req.body; // push object from client to array
 	res.json({recieved: true, id: req.body.id}); // return something
 });
 
@@ -41,8 +44,8 @@ router.route('/answers')
 })
 // POST /answers
 .post(function(req, res) {
-	req.body.id = answers.length; 
-	answers[req.body.id] = req.body;
+	req.body.id = answers.length+1;		 
+	answers[req.body.id-1] = req.body;
 	res.json({recieved: true, id: req.body.id});
 });
 
@@ -53,7 +56,8 @@ router.route('/comments')
 })
 // POST /comments
 .post(function(req, res) {
-	comments[req.body.id] = req.body;
+	req.body.id = comments.length+1;	
+	comments[req.body.id-1] = req.body;
 	res.json({recieved: true, id: req.body.id});
 });
 
