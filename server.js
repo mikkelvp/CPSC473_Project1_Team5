@@ -25,6 +25,12 @@ router.route('/questions')
 // return all questions
 // GET /questions
 .get(function(req, res) {
+	var currDate = new Date();
+	//if expiration date passed, set question to not active
+	for(int i=1; i<=questions.length; i++) {
+		if(questions[i].expirationDate < currDate)
+			questions[i].isActive = false;
+	}
 	res.json(questions);
 })
 // POST /questions
