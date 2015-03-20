@@ -15,6 +15,8 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + "/Website"));
+
 http.createServer(app).listen(3000);
 console.log("Service started on port 3000");
 
@@ -25,12 +27,12 @@ router.route('/questions')
 .get(function(req, res) {
 	res.json(questions);
 })
-// POST /questions
+// POST /questions 
 .post(function(req, res) {
-	//console.log(req.body);
+	console.log(req.body);
 	req.body.id = questions.length; // set id to be the next element in the array
+	req.body.isActive = true;
 	questions[req.body.id] = req.body; // push object from client to array
-
 	res.json({recieved: true, id: req.body.id}); // return something
 });
 
@@ -41,7 +43,7 @@ router.route('/answers')
 })
 // POST /answers
 .post(function(req, res) {
-	req.body.id = answers.length; 
+	req.body.id = answers.length;		 
 	answers[req.body.id] = req.body;
 	res.json({recieved: true, id: req.body.id});
 });
@@ -53,6 +55,7 @@ router.route('/comments')
 })
 // POST /comments
 .post(function(req, res) {
+	req.body.id = comments.length;	
 	comments[req.body.id] = req.body;
 	res.json({recieved: true, id: req.body.id});
 });
