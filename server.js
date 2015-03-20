@@ -11,6 +11,8 @@ var express = require('express'),
 	comments = JSON.parse(fs.readFileSync('json/comments.json', 'utf8')),
 	answers = JSON.parse(fs.readFileSync('json/answers.json', 'utf8'));
 
+app.use(express.static(__dirname + "/Website"));
+
 // set up body-parser to get POST data
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
