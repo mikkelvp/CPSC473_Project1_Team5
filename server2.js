@@ -35,6 +35,7 @@ app.post("/comments", function (req, res) {
    res.json(newCommentObj);
 });
 
+/*
 app.post("/questions", function (req, res) {
   var newQuestion = req.body,
     currDate = new Date();
@@ -46,4 +47,9 @@ app.post("/questions", function (req, res) {
     newQuestion.isActive = false
   }
   res.json(newQuestion);
+});
+*/
+
+app.post("/questions", function (req, res) {
+  res.json(questions);
 });

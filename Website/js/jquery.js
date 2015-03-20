@@ -1,10 +1,3 @@
-/*
-
-Single page ajax & jquery
-http://tutorialzine.com/2009/09/simple-ajax-website-jquery/
-
-
-*/
 
 
 var main = function () {
@@ -23,21 +16,21 @@ var main = function () {
       $activeContainer = $('#homepage');
     }
     else if ($(this).hasClass('questions')) {
+      loadQuestions();
       $('#questions').fadeIn('fast');
       $activeContainer = $('#questions');
     }
-    else if ($(this).hasCLass('newQuestion')) {
+    else if ($(this).hasClass('newQuestion')) {
       $('#newQuestion').fadeIn('fast');
       $activeContainer = $('#newQuestion');
     }
-    else if ($(this).hasCLass('question')) {
+    else if ($(this).hasClass('question')) {
       $('#question').fadeIn('fast');
       $activeContainer = $('#question');
     }
 
   });
-
-
+  
   // On button press - submit question
   $('#questionForm button').click(function() {
     // create JSON string by pulling from HTML DOM objects
@@ -66,3 +59,16 @@ var main = function () {
 };
 
 $(document).ready(main);
+
+function loadQuestions () {
+  // Return list of questions
+  $.post('/questions', function (questions) {
+    $('#questions .jumbotron .container').empty();
+    $.each(questions, function() {
+      var item = $('<div class="item">');
+      var _q = $('<h2>');
+      item.append(_q.text(this.title));
+      $('#questions .jumbotron .container').prepend(item);
+    });
+  });
+}
