@@ -9,6 +9,16 @@
 		"expirationDate": "2015-12-15T08:13:56.470Z",
 		"images": [1, 2],
 		"comments": [1, 2]
+	},
+	{
+		"id": 2,
+		"isActive": true,
+		"title": "Does this web app work?",
+		"body":"Vote on whether this app works or not",
+		"answers": ["Yes", "No"],
+		"expirationDate": "2015-12-15T08:13:56.470Z",
+		"images": [1, 2],
+		"comments": [1, 2]
 	}
 
 ]

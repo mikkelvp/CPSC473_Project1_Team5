@@ -1,11 +1,14 @@
 // Global Variables
-var $activeContainer = $('#homepage');
+var $activeContainer;        // Controls which page is being shown
+var $activeQuestion;    // Controls which question on the questions page shows answers below it
 
 var main = function () {
 
   // Used in submission of new question
   $('#datetimepicker').datetimepicker();
 
+  // Change Pages
+  $activeContainer = $('#homepage');
   $('.mainChanger').click(function(e) {
     // Prevent normal function of link & fade the current active page
     e.preventDefault();
@@ -32,10 +35,22 @@ var main = function () {
 
   });
   
-  // On button press - submit question
+  // On button press - submit new question
   $('#submitBtn').click(function(e) {
     e.preventDefault();
     submitQuestion();
+  });
+  
+  // Click on question - view question in detail
+  $activeQuestion = null;
+  $(document).on('click', '.item h2', function () {
+    //changePage('#question', loadQuestion($(this).attr('questionId')));
+    loadAnswers($(this).parent('.item').attr('questionId'));
+  });
+  
+  // Click on submit button - submit answer to question
+  $(document).on('click', '#submitAnswerBtn', function () {
+    
   });
     
     /*
@@ -58,33 +73,84 @@ $(document).ready(main);
 
 function changePage (idOfPage, callback) {
   // Pass in the string value of the id to change to e.g. #homepage
-  $activeContainer.fadeOut('fast');
-  $(idOfPage).fadeIn('fast');
-  $activeContainer = $(idOfPage);
-  if (typeof callback == "function") {
-    callback();
-  }
+  $activeContainer.fadeOut('fast', function () {
+    $(idOfPage).fadeIn('fast');
+    $activeContainer = $(idOfPage);
+    if (typeof callback == "function") {
+      callback();
+    }
+  });
 }
 
 function loadQuestions () {
   // Return all questions
   $.get('/api/questions', function (questions) {
-    $('#questions .jumbotron .container').empty();
+    var questionContainer = $('#questions .jumbotron .container #frontPage');
+    questionContainer.empty();
     $.each(questions, function() {
-      var item = $('<div class="item">');
-      var _q = $('<h2>');
-      item.append(_q.text(this.title));
-      $('#questions .jumbotron .container').prepend(item);
+      if (this.id) {
+        var item = $('<div class="item" questionId="' + this.id + '">');
+        var _q = $('<h2>');
+        item.append(_q.text(this.title));
+        questionContainer.prepend(item);
+      }
     });
+  });
+}
+
+function loadAnswers (questionId) {
+  // Return single question with specified id and display it below the question clicked
+  $.get('/api/questions/' + questionId, function (question) {
+    var answerContainer = $('<div questionId="' + question.id + '">');
+    $.each(question.answers, function (key, value) {
+      answerContainer.append($('<p class="answer" answerId="' + key + '">').text(value));
+    });
+    answerContainer.hide();
+    
+    var $questionContainer = $('.item[questionId="' + question.id + '"]');
+    
+    if ($activeQuestion) {
+      if ($activeQuestion.is($questionContainer)) {
+        $('.item[questionId="' + question.id + '"] div').slideUp('fast', function () {
+          $('.item[questionId="' + question.id + '"] div').remove();
+          $activeQuestion = null;
+        });
+      }
+      else {
+        $activeQuestion.find('div .answer').slideUp('fast', function () {
+          $('.item div[questionId="' + $activeQuestion.attr('questionId') + '"]').remove();
+          $activeQuestion = $questionContainer;
+          $activeQuestion.append(answerContainer);
+          answerContainer.slideDown('fast');
+        });
+      }
+    }
+    else {
+      $activeQuestion = $questionContainer;
+      $activeQuestion.append(answerContainer)
+      answerContainer.slideDown('fast');
+    }
+    
   });
 }
 
 function loadQuestion (id) {
   // Return single question with specified id
-  console.log("testing loadQuestion");
-  $.get('/api/questions/:' + id, function (question) {
+  $.get('/api/questions/' + id, function (question) {
+    var item = $('<div questionId="' + question.id + '">');
     $('#question .jumbotron .container').empty();
-    $('#question .jumbotron .container').append(question);
+    
+    item.append($('<h2>').text(question.title));
+    item.append($('<p>').text(question.body));
+    item.append();
+    if (question.isActive !== true) {
+      item.append($('<h3>').text('Status: Inactive'));
+    }
+    else {
+      item.append($('<h3>').text('Status: Active'));
+      item.append($('<button id="submitAnswerBtn" class="btn btn-default" role="button">Submit</button>'))
+    }
+    $('#question .jumbotron .container').append(item);
   });
 }
 

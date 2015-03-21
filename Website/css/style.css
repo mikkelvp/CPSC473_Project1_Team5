@@ -6,7 +6,7 @@ html {
   padding-top: 5%
 }
 
-.item:hover {
+.item h2:hover {
   cursor: pointer;
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -14,4 +14,12 @@ html {
 
 .mainContainer:not(#homepage) {
   display: none;
+}
+
+.answer {
+  opacity: 0.6;
+}
+
+.answer:hover {
+  opacity: 1;
 }
