@@ -1,0 +1,16 @@
+.header-title {
+  background: white;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+p.expires {
+	font-size: 12px;
+	font-style: italic;
+}
+
+img.question-img {
+	float: left;
+}
