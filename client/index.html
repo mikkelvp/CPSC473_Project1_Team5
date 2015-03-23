@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap 101 Template</title>
+  <title>Community Based Site</title>
 
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
@@ -58,27 +58,60 @@
       <div class="container">
         <div class="well well-lg">
         <div class="question-head">
-          <h1 class="no-margin">What should i name my cat?</h1>
+          <h1 class="no-margin">What should I name my cat?</h1>
           <p class="expires">Question expires in: 12 hours.</p>
         </div>
         <div class="question-body">
         <p>This is my new cat. Vote on a name or suggest a new one.</p>
         <div class="row">
         <div class="col-md-4"><img class="question-img" src="https://placekitten.com/g/300/300"></div>
-        <div class="col-md-8"><ul>
-            <li>Bob</li>
-            <li>Allan</li>
-            <li>Carl</li>
-          </ul></div>
+        <div class="col-md-8">
+        <div class="options">
+        <form>
+        <div class="radio">
+	  <label>
+	  <input type="radio" name="optionsRadios" id="option1" value="Bob">Bob: 8
+	  </label>
+	</div>
+	<div class="radio">
+	  <label>
+	  <input type="radio" name="optionsRadios" id="option2" value="Allan">Allan: 5
+	  </label>
+	</div>
+	<div class="radio">
+	  <label>
+	  <input type="radio" name="optionsRadios" id="option3" value="Carl">Carl: 10
+	  </label>
+	</div>
+	<button type="submit" class="btn btn-primary btn-xs">Vote</button>
+	</form>
+	</div>
+            </div>
       </div>          
       </div>
       <div class="suggest">
-        <p>Suggest a new name</p>
-
+        <!--<p>Suggest a new name</p>-->
+	<br>
         <form>
-          <input type="text" class="" placeholder=""> </input>
+          <input type="text" class="" placeholder="Suggest a new name"> </input>
           <button type="submit" class="btn btn-primary btn-xs">Submit</button>
         </form>     
+      </div>
+      <hr>
+      <br>
+      <div class="comments">
+      <h2> Comments </h2>
+      <!--<p>Add Comments</p>-->
+      <form>
+	  <div><input type="text" class="" placeholder="Your Username"> </input></div>
+          <textarea rows="5" cols="50" placeholder="Add Comments"> </textarea>
+          <button type="submit" class="btn btn-primary btn-xs">Submit</button>
+      </form>
+      <br>
+      <h3 class="username">User 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
+      <h3 class="username">User 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
       </div>
           
 

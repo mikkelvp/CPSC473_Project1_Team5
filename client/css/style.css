@@ -14,3 +14,6 @@ p.expires {
 img.question-img {
 	float: left;
 }
+.options {
+  margin-left: 5%;
+}
