@@ -9,6 +9,7 @@
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,48 +50,27 @@
        <div class="container">
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Questions</a></li>
-          <li><a href="#">Animals</a></li>
-          <li class="active"></li>
         </ol>
       </div>
 
-      <div class="container">
-        <div class="well well-lg">
-        <div class="question-head">
+      <div class="container main-container">
+        <h1>Submit a question</h1>
+        <div class="input-box">
+          <div id="qTitle">Question Title<br />
+            <input size="65"></div>
+          <div id="qBody">Question Body<br />
+            <textarea cols="50" rows="5"></textarea>
+          </div>
+          <div id="expDate">Expiration date/time: <input id="datetimepicker" type="text"></div>
+          <div id="image">Image url(optional) <input size="65"></div>
+          <div id="submit"><!--<button class='btn-default'>submit question</button>-->
+            <a class="btn btn-default" role="button" href="#">Submit Question »</a>
+          </div>
+          <div id="questions"></div>
         </div>
-        <div class="question-body">
-        
-        <div class="row">
-        <div class="col-md-4"><img class="question-img" src="https://placekitten.com/g/300/300"></div>
-        <div class="col-md-8"><ul class="question-answers">
-            
-          </ul></div>
-      </div>          
-      </div>
-      <div class="suggest">
-        <p>Suggest a new answer</p>
-
-        <form>
-          <input type="text" class="" placeholder=""> </input>
-          <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-        </form>     
       </div>
 
-      <div class="comments">
-        <h2> Comments </h2>
-        <!--<p>Add Comments</p>-->
-        <form>
-          <div>
-            <input type="text" placeholder="Your Username"> </input>
-          </div>
-            <textarea rows="5" cols="50" placeholder="Add Comments"> </textarea>
-            <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-        </form>
-          <br>
-          <div class="comments-area">
-          </div>
-      </div>
+      
           
 
         </div>
@@ -100,8 +80,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-      <script src="javascripts/question.js"></script>
-      <script src="javascripts/comments.js"></script>
-      <script src="javascripts/answer.js"></script>
+      <script src="javascripts/jquery.datetimepicker.js"></script>
+      <script src="javascripts/submitQuestion.js"></script>
     </body>
     </html>
