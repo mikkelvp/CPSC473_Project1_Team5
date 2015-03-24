@@ -22,23 +22,42 @@ p.expires {
 }
 
 #question-body-container {
-    display:table;
-    margin:auto;
+    width:40%;
+    padding:1%;
+    font-size:80%;
+    color:#666;
+    overflow:hidden;
  }
 
-#image,#options{
-    display:table-cell;
-    vertical-align:middle;
+#image {
+    float:left;
+    width:56%;
+    border:1px solid #999;
+    border-radius:5px;
+ }
+
+#options{
+    float:right;
+    width:42%;
+    padding-top:10%;
  }
 
 #options div {
-    margin:5px 0;
-    padding-left: 8px;
+    clear:both;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:1px dotted #999;
+    overflow:hidden;
  }
 
 .option {
-    display:inline-block;
-    width:60px;
+    float:left;
+    line-height:1.8;
+ }
+
+.btn-option {
+    float:right;
+    line-height:1.8;
  }
 
 .like,.dislike {
@@ -48,7 +67,7 @@ p.expires {
 .like:before {
     content:'\e125';
  }
- 
+
 .dislike:before {
     content:'\e126';
  }
