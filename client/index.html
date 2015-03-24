@@ -4,13 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Community Based Site</title>
-
+  <title>Name - Make decisions!</title>
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
   <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,7 +36,7 @@
                     <a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New question</a>
                   </li>
                   <li>
-                  <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Questions</a>
+                    <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Questions</a>
                   </li>
                   <li>
                     <a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
@@ -50,14 +48,14 @@
                  </div>
                  <button type="submit" class="btn btn-primary">
                   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                 </button> 
-               </form>
-             </div>
-           </div>
-         </nav>
-       </div> <!-- /container -->
+                </button> 
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div> <!-- /container -->
 
-       <div class="container">
+      <div class="container">
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
           <li><a href="#">Questions</a></li>
@@ -72,88 +70,73 @@
           <div class="question-head">
             <h1 class="no-margin">What should I name my cat?</h1>
             <p class="expires">Question expires in: 12 hours.</p>
-          </div>
+            <p class="question-title">This is my new cat. Vote on a name or suggest a new one.</p>
+          </div>                    
 
-          <div class="question-body">
-            <p>This is my new cat. Vote on a name or suggest a new one.</p>
-            <div class="row">
-              <div class="col-md-4">
-              <img class="question-img" src="https://placekitten.com/g/300/300">
-              </div>
-              <div class="col-md-8">
-                <p class="option">
-                  <span>Bob&nbsp;&nbsp;</span>
-                  <button type="button" class="btn btn-success btn-xs">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 
-                  </button>
-                  <button type="button" class="btn btn-danger btn-xs">
-                  <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                  </button>
-                </p>
-                <p class="option">
-                  <span>Allan</span>
-                  <button type="button" class="btn btn-success btn-xs">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                  </button>
-                </p>
-                <p class="option">
-                  <span>Carl&nbsp;&nbsp;</span>
-                  <button type="button" class="btn btn-success btn-xs">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                  </button>
-                </p>
-              </div>
-            </div>          
-          </div>
+          <div id="question-body-container" class="pull-left">
+            <img id="image" src="https://placekitten.com/g/300/300">
 
-          <div class="suggest">
-            <p>
+            <div id="options">
+              <div>
+               <span class="option">Bob</span>
+               <button type="button" class="btn btn-success btn-xs like"></button>
+               <button type="button" class="btn btn-danger btn-xs dislike"></button>
+             </div>
+             <div>
+               <span class="option">Allan</span>
+               <button type="button" class="btn btn-success btn-xs like"></button>
+               <button type="button" class="btn btn-danger btn-xs dislike"></button>
+             </div>
+             <div>
+               <span class="option">Carl</span>
+               <button type="button" class="btn btn-success btn-xs like"></button>
+               <button type="button" class="btn btn-danger btn-xs dislike"></button>
+             </div>
+           </div><!-- /#options -->
+         </div><!-- /#question-body-container -->
+         <div class="clearfix"></div>
+
+         <div class="suggest">
+          <p>
             <form>
               <span>
                 <input type="text" placeholder="Suggest a new name"> </input>
                 <button type="submit" class="btn btn-primary btn-xs">Submit</button>
               </span>
             </form>   
-            </p>  
-          </div>
-
-          <hr>
-
-          <div class="comments">
-            <h2>Comments</h2>
-            <form>
-              <p>
-                <input type="text" placeholder="&nbsp;name"></input>
-              </p>
-              <p>
-                <textarea rows="5" cols="50"></textarea>
-              </p>
-              <p>
-                <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-              </p>
-            </form>
-            <br>
-            <h3 class="username">User 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
-            <h3 class="username">User 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
-          </div>    
+          </p> 
+          <hr> 
         </div>
-      </div>
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <div class="comments">
+          <h2>Comments</h2>
+          <form>
+            <p>
+              <input type="text" placeholder="&nbsp;name"></input>
+            </p>
+            <p>
+              <textarea rows="5" cols="50"></textarea>
+            </p>
+            <p>
+              <button type="submit" class="btn btn-primary btn-xs">Submit</button>
+            </p>
+          </form>
+          <br>
+          <h3 class="username">User 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
+          <h3 class="username">User 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
+        </div>    
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
       <!--- atm js breaks some stuff
       <script src="javascripts/question.js"></script>
       <script src="javascripts/comments.js"></script>
       <script src="javascripts/answer.js"></script> -->
-  </body>
-  </html>
+    </body>
+    </html>

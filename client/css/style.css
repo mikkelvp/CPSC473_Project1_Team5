@@ -1,3 +1,13 @@
+@font-face{
+    font-family:'Glyphicons Halflings';
+    src:url('../fonts/glyphicons-halflings-regular.eot');
+    src:url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+        url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+        url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+        url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+ }
+
 .header-title {
   background: white;
 }
@@ -11,9 +21,34 @@ p.expires {
 	font-style: italic;
 }
 
-img.question-img {
-	float: left;
-}
-.options {
-  margin-left: 5%;
-}
+#question-body-container {
+    display:table;
+    margin:auto;
+ }
+
+#image,#options{
+    display:table-cell;
+    vertical-align:middle;
+ }
+
+#options div {
+    margin:5px 0;
+    padding-left: 8px;
+ }
+
+.option {
+    display:inline-block;
+    width:60px;
+ }
+
+.like,.dislike {
+    font-family:'Glyphicons Halflings';
+ }
+
+.like:before {
+    content:'\e125';
+ }
+ 
+.dislike:before {
+    content:'\e126';
+ }
