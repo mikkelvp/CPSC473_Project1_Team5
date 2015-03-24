@@ -68,7 +68,7 @@ router.route('/comments')
 });
 
 router.route('/questions/:question_id')
-// GET /questions//:question_id
+// GET /questions/:question_id
 .get(function(req, res) {
 	res.json(questions[req.params.question_id]);
 });
