@@ -33,10 +33,10 @@
                     <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
                   </li> 
                   <li>
-                    <a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New question</a>
+                    <a href="submitQuestion.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New question</a>
                   </li>
                   <li>
-                    <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Questions</a>
+                    <a href="main.html"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Questions</a>
                   </li>
                   <li>
                     <a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
@@ -60,7 +60,7 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Questions</a></li>
           <li><a href="#">Animals</a></li>
-          <li class="active">What should i name my cat?</li>
+          <li class="active"></li>
         </ol>
       </div> <!-- /container -->
 
@@ -68,48 +68,27 @@
         <div class="well well-lg">
 
           <div class="question-head">
-            <h1 class="no-margin">What should I name my cat?</h1>
-            <p class="expires">Question expires in: 12 hours.</p>
-            <p class="question-title">This is my new cat. Vote on a name or suggest a new one.</p>
           </div>                    
 
           <div id="question-body-container">
-            <img id="image" src="https://placekitten.com/g/300/300">
+            <img id="image" class="question-img" src="https://placekitten.com/g/300/300">
 
             <div id="options">
-              <div>
-               <span class="option">Bob</span>
-               <span class="btn-option">
-               <button type="button" class="btn btn-success btn-xs like"></button>
-               <button type="button" class="btn btn-danger btn-xs dislike"></button>
-               </span>
-             </div>
-             <div>
-               <span class="option">Allan</span>
-               <span class="btn-option">
-               <button type="button" class="btn btn-success btn-xs like"></button>
-               <button type="button" class="btn btn-danger btn-xs dislike"></button>
-               </span>
-             </div>
-             <div>
-               <span class="option">Carl</span>
-               <span class="btn-option">
-               <button type="button" class="btn btn-success btn-xs like"></button>
-               <button type="button" class="btn btn-danger btn-xs dislike"></button>
-               </span>
-             </div>
+              <div class="question-answers">
+              </div>
+              
            </div><!-- /#options -->
          </div><!-- /#question-body-container -->         
 
          <div class="suggest">
-          <p>
+          <p>Suggest a new answer</p>
             <form>
               <span>
                 <input type="text" placeholder="Suggest a new name"> </input>
                 <button type="submit" class="btn btn-primary btn-xs">Submit</button>
               </span>
             </form>   
-          </p> 
+           
           <hr> 
         </div>
 
@@ -120,17 +99,15 @@
               <input type="text" placeholder="&nbsp;name"></input>
             </p>
             <p>
-              <textarea rows="5" cols="50"></textarea>
+              <textarea rows="5" cols="50" placeholder="Add Comments"></textarea>
             </p>
             <p>
               <button type="submit" class="btn btn-primary btn-xs">Submit</button>
             </p>
           </form>
           <br>
-          <h3 class="username">User 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
-          <h3 class="username">User 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lorem, vestibulum sed egestas vel, placerat sit amet magna. Vivamus eros velit, iaculis ut dolor sit amet, dapibus finibus risus. Donec tristique mauris vitae aliquam cursus. Nulla sed aliquam sapien. Aenean semper risus a dignissim lobortis. Donec volutpat neque sit amet sem facilisis, at sodales odio finibus. Fusce feugiat, mi vitae ultricies interdum, ex diam rhoncus felis, non consectetur arcu purus sit amet augue. Nunc venenatis eget metus non blandit. </p>
+          <div class="comments-area">
+          </div>
         </div>    
       </div>
     </div>
@@ -139,9 +116,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-      <!--- atm js breaks some stuff
       <script src="javascripts/question.js"></script>
       <script src="javascripts/comments.js"></script>
-      <script src="javascripts/answer.js"></script> -->
+      <script src="javascripts/answer.js"></script>
+      <script src="javascripts/voting.js"></script>
     </body>
     </html>

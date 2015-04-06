@@ -3,10 +3,10 @@ var question = {
   isActive:false,
   title:"",
   body:"",
-  answers:{},
-  expirationDate:{},
-  image:{},
-  comments:{}
+  answers:[0],
+  expirationDate:[0],
+  image:"",
+  comments:[0]
 };
 
 var answerArray = {
@@ -24,9 +24,6 @@ function printOutcome (response) {
 var main = function () {
 
   //"use strict";
-
-
-  console.log("eh");
 
 $("#answer-button #add").on("click", function (event) {
   answerCount++;

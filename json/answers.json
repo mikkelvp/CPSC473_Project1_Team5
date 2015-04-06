@@ -18,4 +18,17 @@
 			"downVotes": 1,
 			"answer": "Allan"
 		}		
+		,
+		{
+			"id": 4,
+			"upVotes": 6,
+			"downVotes": 3,
+			"answer": "Yes"
+		},
+		{
+			"id": 5,
+			"upVotes": 1,
+			"downVotes": 1,
+			"answer": "No"
+		}	
 ]
