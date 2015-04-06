@@ -9,47 +9,9 @@ var question = {
   comments:[0]
 };
 
-var answerArray = {
-
-};
-var answerCount = 0;
-
-//for debugging/testing purposes
-function printOutcome (response) {
-  var out = $("<p>");
-  out.text("Returned from the server: Question id "+response.id);
-  $("#questions").append(out);
-}
-
 var main = function () {
 
-  //"use strict";
-
-$("#answer-button #add").on("click", function (event) {
-  answerCount++;
-  var input = $("#answers input").val();
-  //alert(input);
-  var addInput = $("<input>");
-  addInput.attr("id",answerCount);
-  $("#answers").append($("<br>"));
-  $("#answers").append(addInput);
-});
-
-$("#answer-delete button").on("click", function (event) {
-  if(answerCount >=0) {
-    var string = "#answers #"+answerCount;
-    var input = $(string)
-    input.remove();
-    answerCount--;
-  }
-});
-
-
   jQuery('#datetimepicker').datetimepicker();
-
-
-
-
 
   $("#submit a").on("click", function (event) {
     if($("#qTitle input").val() !== "" && $("#qBody textarea").val() !== "" && $("#expDate input").val() !== "") {

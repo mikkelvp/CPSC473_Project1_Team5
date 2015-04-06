@@ -4,7 +4,7 @@ var main = function () {
 			if(response[i].isActive) {
 				var qElement = $("<a>");
 				qElement.attr("id",response[i].id);
-				qElement.attr("href","/index.html");
+				qElement.attr("href","/main.html");
 				qElement.text(response[i].title);				
 				$(".question-list").append(qElement);
 				$(".question-list").append($("<br>"));

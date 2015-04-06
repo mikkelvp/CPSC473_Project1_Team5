@@ -14,5 +14,15 @@
 		"id": 3,
 		"comment": "I like Allan",
 		"user": "John"
+	},
+	{
+		"id": 4,
+		"comment": "I think everything works",
+		"user": "Anon"
+	},
+	{
+		"id": 5,
+		"comment": "Nice!",
+		"user": "Eh"
 	}
 ]
