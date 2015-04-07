@@ -148,15 +148,5 @@ router.route('/save')
 	res.json(response);
 });
 
-app
-// 404, Could not find page
-.get('/*', function(req, res) {
-  res.end("<h1>404!</h1><br /><h2>We're sorry, the page you requested was not found...</h2>");
-})
-.post('/*', function(req, res) {
-  res.end("<h1>404!</h1><br /><h2>We're sorry, the page you requested was not found...</h2>");
-});
-
-
 // add /api to routes
 app.use('/api', router);
