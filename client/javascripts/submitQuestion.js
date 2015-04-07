@@ -13,11 +13,11 @@ var main = function () {
 
   jQuery('#datetimepicker').datetimepicker();
 
-  $("#submit a").on("click", function (event) {
+  $("#qSubmit").on("click", function (event) {
     if($("#qTitle input").val() !== "" && $("#qBody textarea").val() !== "" && $("#expDate input").val() !== "") {
       question.title = $("#qTitle input").val();
       question.body = $("#qBody textarea").val();
-      question.image = $("#image input").val();
+      question.image = $("#qImage input").val();
       //checking if the date/time entered is valid
       var currDate = new Date();
       if(new Date($("#expDate input").val()) < currDate) {
@@ -36,7 +36,7 @@ var main = function () {
         //resetting parameters
         $("#qTitle input").val("");
         $("#qBody textarea").val("");
-        $("#image input").val("");
+        $("#qImage input").val("");
         $("#expDate input").val("");
       }
     }
