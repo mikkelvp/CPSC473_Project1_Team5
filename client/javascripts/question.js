@@ -13,7 +13,7 @@ function loadQuestion(questionID) {
 		titleElement.text(response.title);
 		bodyElement.text(response.body);
 		expElement.addClass("expires");
-		expElement.text("Expiration date: "+ new Date(response.expirationDate)+", question expires in "+hours+" hours "+minutes+" mins");
+		expElement.text("Question expires in "+hours+" hours "+minutes+" mins");
 
 		//updating image
 		if(response.image!="") {

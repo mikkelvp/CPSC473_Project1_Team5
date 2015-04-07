@@ -27,7 +27,6 @@ var main = function () {
         var buttonInc = $("<button>");
         buttonInc.attr("type","button");
         buttonInc.attr("id","+"+response.id);
-        console.log(response.id);
         buttonInc.addClass("btn btn-success btn-xs like");
         
         var buttonDec = $("<button>");

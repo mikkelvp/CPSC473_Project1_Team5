@@ -91,7 +91,9 @@ router.route('/answers/:answer_id')
 	else if(req.body.type=="downVote") {
 		answers[req.params.answer_id].downVotes++;
 	}
-	res.json({id:req.params.answer_id,upVotes:answers[req.params.answer_id].upVotes,downVotes:answers[req.params.answer_id].downVotes});
+	res.json({id:req.params.answer_id,
+		upVotes:answers[req.params.answer_id].upVotes,
+		downVotes:answers[req.params.answer_id].downVotes });
 });
 
 
@@ -111,16 +113,40 @@ router.route('/currQuestion')
 router.route('/currQuestion/:currQuestion_id')
 // sets the current question id
 .get(function(req, res) {
-	//console.log(req.params.currQuestion_id);
 	currQues.id=req.params.currQuestion_id;
 	res.json(currQues);
 
-	//res.json(answers);
 });
 
-
-
-
+//save data to json files
+router.route('/save')
+.get(function(req, res) {
+	var response = {questions: 'success',
+					comments: 'success',
+					answers: 'success'};
+	//save questions.json
+	fs.writeFile('json/questions.json', JSON.stringify(questions, null, 4), function(err) {
+		if (err) {
+			console.log(err);
+			response.questions = 'error';
+		}
+	})
+	//save comments.json
+	fs.writeFile('json/comments.json', JSON.stringify(comments, null, 4), function(err) {
+		if (err) {
+			console.log(err);
+			response.comments = 'error';
+		}
+	})
+	//save answers.json
+	fs.writeFile('json/answers.json', JSON.stringify(answers, null, 4), function(err) {
+		if (err) {
+			console.log(err);
+			response.answers = 'error';
+		}
+	})
+	res.json(response);
+});
 
 // add /api to routes
 app.use('/api', router);

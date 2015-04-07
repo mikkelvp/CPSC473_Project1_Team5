@@ -29,8 +29,6 @@ var main = function () {
 
         //post request
         $.post('api/questions', question, function (response) {
-          console.log("client side:");
-	  console.log(response);
           //printOutcome(response);
           alert("Your question has been submitted!");
         });
