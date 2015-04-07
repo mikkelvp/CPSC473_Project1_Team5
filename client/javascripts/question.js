@@ -24,7 +24,7 @@ function loadQuestion(questionID) {
 		}
 
 
-		$(".active").append($("<span>").text(response.title));
+		$("#bc").append($("<span>").text(response.title));
 		$(".question-head").prepend(titleElement);
 		$(".question-head").append(expElement);
 		$(".question-body").prepend(bodyElement);
@@ -55,7 +55,7 @@ function loadQuestion(questionID) {
 
 		        divTemp.append(spanTemp);
 		        divTemp.append($("<span>").addClass("option").text(response.answer));
-		        divTemp.append($("<span>").addClass("votes"+response.id).text("+"+response.upVotes+", -"+response.downVotes));
+		        divTemp.append($("<span>").addClass("votes"+response.id).text(" +"+response.upVotes+", -"+response.downVotes));
 		        
 		        $(".question-answers").append(divTemp);	
 				
